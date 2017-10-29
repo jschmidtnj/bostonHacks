@@ -14,10 +14,13 @@ class pumpkin_ViewController: UIViewController, ARSCNViewDelegate {
     
    
   
-    @IBOutlet weak var previouse: UIButton!
-    @IBAction func next(_ sender: UIButton) {
+   
+    
+    @IBAction func previous(_ sender: Any) {
         performSegue(withIdentifier: "2to1", sender: self)
     }
+    
+    
     @IBOutlet var sceneView: ARSCNView!
     
     @IBOutlet weak var vocab: UILabel!
@@ -33,7 +36,7 @@ class pumpkin_ViewController: UIViewController, ARSCNViewDelegate {
         
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/pumpkin/Pumpkin.scn")!
+        let scene = SCNScene(named: "art.scnassets/pumpkin/Pumpkin11.scn")!
         //let scene = SCNScene(named: "art.scnassets/pumpkin/Pumpkin.scn")!
         
         // Set the scene to the view
@@ -117,7 +120,7 @@ class pumpkin_ViewController: UIViewController, ARSCNViewDelegate {
                 if let hitObject = hitList.first {
                     let node = hitObject.node
     
-                    if node.name == "pumpkin" {
+                    if node.name == "Pumpkin11" {
     
                        let source = SCNAudioSource(fileNamed: "art.scnassets/pumpkin/Pumpkin_f_sound.m4a")
                         let action = SCNAction.playAudio(source!, waitForCompletion: true)

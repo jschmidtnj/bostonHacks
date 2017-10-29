@@ -12,6 +12,9 @@ import ARKit
 
 class dragon_ViewController: UIViewController, ARSCNViewDelegate {
     
+    @IBAction func next(_ sender: UIButton) {
+        performSegue(withIdentifier: "2to3", sender: self)
+    }
     
     @IBOutlet weak var vocab: UILabel!
     @IBOutlet var sceneView: ARSCNView!
@@ -93,9 +96,9 @@ class dragon_ViewController: UIViewController, ARSCNViewDelegate {
             if let hitObject = hitList.first {
                 let node = hitObject.node
                 
-                if node.name == "pumpkin" {
+                if node.name == "dragon" {
                     
-                    let source = SCNAudioSource(fileNamed: "art.scnassets/pumpkin/Pumpkin_f_sound.m4a")
+                    let source = SCNAudioSource(fileNamed: "art.scnassets/Dragon_sound.m4a")
                     let action = SCNAction.playAudio(source!, waitForCompletion: true)
                     node.runAction(action)
                     

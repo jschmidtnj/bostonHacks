@@ -13,7 +13,13 @@ import ARKit
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     
+    
     @IBOutlet var sceneView: ARSCNView!
+    
+    @IBAction func next(_ sender: Any) {
+        performSegue(withIdentifier: "1to2", sender: self)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
